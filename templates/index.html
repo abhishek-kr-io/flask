@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Shopping List</title>
+</head>
+<body>
+    <h1>A simple shopping list manager</h1>
+    <ul> 
+        {% for item in items %}        
+        <li> {{ item }}  <small> <a href="{{ url_for('remove_item', name=item)}}"> Remove</a> </li> </small> </li>
+        {% endfor %}
+    </ul>
+
+    <form method="POST">
+        <input type="text" name="item">
+        <input type="submit" value="add to list"> 
+
+    </form>
+    
+</body>
+</html>
